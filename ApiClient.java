@@ -119,7 +119,7 @@ public class ApiClient
 
     public ApiClient post(String json)
     {
-        currentResponse = asCurrentUser().given().contentType(ContentType.JSON).body(json).post(currentUrl);
+        currentResponse = given().contentType(ContentType.JSON).body(json).post(currentUrl);
         logResponse();
         assertOkResponse();
         return this;
@@ -127,7 +127,7 @@ public class ApiClient
 
     public ApiClient put(String json)
     {
-        currentResponse = asCurrentUser().given().contentType(ContentType.JSON).body(json).put(currentUrl);
+        currentResponse = given().contentType(ContentType.JSON).body(json).put(currentUrl);
         logResponse();
         assertOkResponse();
         return this;
@@ -135,7 +135,7 @@ public class ApiClient
 
     public ApiClient delete()
     {
-        currentResponse = asCurrentUser().delete(currentUrl);
+        currentResponse = delete(currentUrl);
         logResponse();
         assertOkResponse();
         return this;
@@ -143,7 +143,7 @@ public class ApiClient
 
     public ApiClient get()
     {
-        currentResponse = asCurrentUser().get(currentUrl);
+        currentResponse = get(currentUrl);
         logResponse();
         assertOkResponse();
         return this;
@@ -151,7 +151,7 @@ public class ApiClient
 
     public ApiClient patch(String json)
     {
-        currentResponse = asCurrentUser().given().contentType(ContentType.JSON).body(json).patch(currentUrl);
+        currentResponse = given().contentType(ContentType.JSON).body(json).patch(currentUrl);
         logResponse();
         assertOkResponse();
         return this;
